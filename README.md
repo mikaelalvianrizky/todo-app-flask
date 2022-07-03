@@ -12,7 +12,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 export FLASK_APP=app
-export FLASK_DEBUG=1 (if you in dev mod)
+export FLASK_DEBUG=1 (if you in development)
 flask run
 ```
 
