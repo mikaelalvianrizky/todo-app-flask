@@ -1,11 +1,8 @@
 from app import db
 
 def getAllKegiatan() -> list:
-    """Reads all tasks listed in the todo table
-    Returns:
-        A list of dictionaries
-    """
-
+    # Reads all tasks listed in the todo table
+    
     conn = db.connect()
     query_results = conn.execute("SELECT * FROM Kegiatan ORDER BY id DESC").fetchall()
     conn.close()
