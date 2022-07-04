@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Edit To-Do{% endblock %}
+
+{% block content %}
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{kegiatan.task}}</h5>
+        <a href="{{ url_for('index') }}" type="button" class="btn btn-primary card-link">Kembali</a>
+    </div>
+</div>
+{% endblock %}

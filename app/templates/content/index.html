@@ -2,29 +2,24 @@
 {% block title %}To-Do{% endblock %}
 
 {% block content %}
-<div class="position-relative">
-    <div class="position-absolute top-0 start-50 translate-middle-x">
-        <h1 style="text-align: center;">TO-DO App</h1>
-        <div class="container">
-            <form action="" class="row g-3" method="POST">
-                <div class="col-9">
-                    <input class="form-control mb-6" type="text" name="judul" placeholder="Masukkan kegiatan Anda" required>
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
-                </div>
-            </form>
-        </div>
-
-        {% for kegiatan in todo %}
-        <div class="card" style="width: 25rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{kegiatan.task}}</h5>
-                <a href="{{ url_for('update', task_id=kegiatan.id) }}" type="button" class="btn btn-warning card-link">Edit kegiatan</a>
-                <a href="{{ url_for('delete', task_id=kegiatan.id) }}" type="button" class="btn btn-danger card-link">Hapus kegiatan</a>
+    <div class="container">
+        <form action="" class="row g-3" method="POST">
+            <div class="col-9">
+                <input class="form-control mb-6" type="text" name="judul" placeholder="Masukkan kegiatan Anda" required>
             </div>
-        </div>
-        {% endfor %}
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </div>
+        </form>
     </div>
-</div>
+
+    {% for kegiatan in todo %}
+    <div class="card" style="width: 25rem;">
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ url_for('detail', task_id=kegiatan.id) }}" style="text-decoration: none; color: #000000;" class="detailkegiatan">{{kegiatan.task}}</a></h5>
+            <a href="{{ url_for('update', task_id=kegiatan.id) }}" type="button" class="btn btn-warning card-link">Edit kegiatan</a>
+            <a href="{{ url_for('delete', task_id=kegiatan.id) }}" type="button" class="btn btn-danger card-link">Hapus kegiatan</a>
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}

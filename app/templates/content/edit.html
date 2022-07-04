@@ -2,17 +2,12 @@
 {% block title %}Edit To-Do{% endblock %}
 
 {% block content %}
-<div class="position-relative">
-    <div class="position-absolute top-0 start-50 translate-middle-x">
-        <h1>TO-DO App</h1>
-        <form action="" class="row g-3" method="POST">
-            <div class="col-auto">
-                <input class="form-control" type="text" name="judulBaru" value="{{kegiatan.task}}">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-warning mb-3">Edit</button>
-            </div>
-        </form>
+<form action="" class="row g-3" method="POST">
+    <div class="col-auto">
+        <input class="form-control" type="text" name="judulBaru" value="{{kegiatan.task}}">
     </div>
-</div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-warning mb-3">Edit</button>
+    </div>
+</form>
 {% endblock %}
